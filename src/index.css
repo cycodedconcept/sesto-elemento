@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .recsize {
+    @apply h-[206px] w-[90vw] md:w-[220px] lg:w-[237px] flex flex-col items-center py-10 gap-4 bg-ltBlue2 rounded-lg;
+  }
+
+  .smrecsize {
+    @apply h-[50px] w-[46px] relative;
+  }
+
+  .xsrecsizetop {
+    @apply w-[35px] h-[44px] absolute top-0 left-0 rounded-2xl;
+  }
+
+  .xsrecsizebtm {
+    @apply w-[35px] h-[44px] absolute bottom-0 right-0 rounded-2xl;
+  }
+}
+
+p {
+  font-size: 24px;
+}
