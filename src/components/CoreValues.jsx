@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const CoreValues = ({ bgColor = "bg-offWhite" }) => {
   return (
     <section
-      className={`${bgColor} py-36 flex flex-col items-center justify-center gap-36`}
+      className={`${bgColor} py-36 flex flex-col items-center justify-center gap-36 font-lexend`}
       data-aos="fade-up"
     >
       <h2 className="text-dkBlue text-center text-4xl lg:text-[44px] font-semibold capitalize">

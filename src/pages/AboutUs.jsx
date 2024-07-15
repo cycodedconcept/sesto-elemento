@@ -20,14 +20,14 @@ const AboutUs = () => {
   }, [location]);
 
   return (
-    <div className="overflow-x-hidden">
-      <section className="bg-skyBlue w-full h-screen py-44 px-4 md:px-8 lg:px-[100px] relative flex items-center font-lexend">
+    <div className="overflow-x-hidden font-lexend">
+      <section className="bg-skyBlue w-full md:h-screen py-4 sm:py-8 md:py-16 lg:py-44 px-4 md:px-8 lg:px-16 xl:px-[100px] relative flex items-center font-lexend">
         <div
-          className="w-full flex flex-col items-center lg:px-16 pt-32 pb-24 bg-contain gap-4 bg-no-repeat"
+          className="w-full flex flex-col items-center lg:px-16 pt-24 md:pt-32 pb-24 bg-contain gap-4 bg-no-repeat"
           style={{ backgroundImage: `url(${aboutusBgImage})` }}
         >
           <h2
-            className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold lg:w-[50%] leading-[60px] text-center text-ltBlue"
+            className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold xl:w-[50%] leading-[60px] text-center text-ltBlue"
             data-aos="fade-down"
           >
             <span className="text-dkBlue">SESTO</span> ELEMENTO{" "}
@@ -37,14 +37,14 @@ const AboutUs = () => {
             className="text-navGray text-center text-lg md:text-xl lg:text-2xl"
             data-aos="fade-up"
           >
-            Sesto elemento services Limited was established in 2013, a leading,
+            Sesto Elemento Services Limited was established in 2013, a leading,
             Procurement, Integration, Installation and Maintenance provider.
           </span>
           <span
             className="text-center text-navGray text-lg md:text-xl lg:text-2xl"
             data-aos="fade-up"
           >
-            Sesto elemento is headquartered in Lagos Nigeria and has a satellite
+            Sesto Elemento is headquartered in Lagos Nigeria and has a satellite
             office in Port Harcourt and Abuja. Our primary focus is on Project
             Procurement services, Technical site assistance services innovative
             solutions enhancing Production (Oil, Gas, Minerals), Mining,
@@ -65,8 +65,8 @@ const AboutUs = () => {
           </h2>
           <p className="text-lg text-center text-navGray">
             We are a projects and operations support services firm poised
-            towards the provision of solutions in the Oil, Energy, Marine,
-            Building and Civil Infrastructure Industry where we develop
+            towards the provision of solutions in the Oil and gas, Marine,
+            Defence, Telecoms and Civil infrastructure Industry where we develop
             unrivaled trailblazing solutions in building sustainable
             infrastructures that comply with global best practice.
           </p>
@@ -117,10 +117,8 @@ const AboutUs = () => {
             success and build structures and roadways that will leave a lasting
             impression for our clients, our society and our communities
           </p>
-          <Link to="/about-us">
-            <button className="bg-dkBlue text-white px-10 py-4 lg:px-36 lg:py-4 text-xs lg:text-sm rounded-lg">
-              Work with us
-            </button>
+          <Link to="/contact-us">
+            <button className="kbutton">Work with us</button>
           </Link>
         </div>
         <div className="">

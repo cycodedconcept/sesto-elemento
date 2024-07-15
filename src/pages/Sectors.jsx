@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavigationContext } from "../context/NavigationContext";
 import SectorHomePage from "../components/SectorHomePage";
@@ -27,7 +27,7 @@ const sectorsData = {
     image: defenceImage,
     header: "Defence",
     paragraph:
-      "SESTO ELEMENTO SERVICES supply a broad portfolio of airborne, land and naval systems and products for defense, homeland security and commercial applications. Our systems and products are installed on new platforms, and we also perform comprehensive platform modernization programs. In addition, we provide a range of training and support services. Our major activities include: military aircraft and helicopter systems; commercial aviation systems and aerostructures; unmanned aircraft systems (UAS); electro-optic, night vision and countermeasures systems; naval systems; land vehicle systems; munitions; command, control, communications, computer, intelligence, surveillance and reconnaissance (C4ISR) and cyber systems; electronic warfare and signal intelligence systems; and other commercial activities. Many of these major activities have a number of common and related elements, including common technologies and products, types of programs and customer interface. ",
+      "Sesto Elemento Services Limited supply a broad portfolio of airborne, land and naval systems and products for defense, homeland security and commercial applications. Our systems and products are installed on new platforms, and we also perform comprehensive platform modernization programs. In addition, we provide a range of training and support services. Our major activities include: military aircraft and helicopter systems; commercial aviation systems and aerostructures; unmanned aircraft systems (UAS); electro-optic, night vision and countermeasures systems; naval systems; land vehicle systems; munitions; command, control, communications, computer, intelligence, surveillance and reconnaissance (C4ISR) and cyber systems; electronic warfare and signal intelligence systems; and other commercial activities. Many of these major activities have a number of common and related elements, including common technologies and products, types of programs and customer interface. ",
     paragraphTwo:
       "Therefore, certain of our subsidiaries, divisions or other operating units often jointly conduct marketing, research and development, manufacturing, performance of programs, sales and after sales support among these major activities.",
   },
@@ -47,10 +47,13 @@ const sectorsData = {
   },
 };
 
+const sectorsKeys = Object.keys(sectorsData);
+
 const Sectors = () => {
   const { selectedSector, setSelectedSector } = useContext(NavigationContext);
   const location = useLocation();
   const sectionRef = useRef(null);
+  const [currentSectorIndex, setCurrentSectorIndex] = useState(0);
 
   useEffect(() => {
     const hash = location.hash.replace("#", "");
@@ -60,9 +63,23 @@ const Sectors = () => {
         sectionRef.current.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      setSelectedSector("oilngas");
+      setSelectedSector(sectorsKeys[currentSectorIndex]);
     }
-  }, [location, setSelectedSector]);
+  }, [location, setSelectedSector, currentSectorIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSectorIndex(
+        (prevIndex) => (prevIndex + 1) % sectorsKeys.length
+      );
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    setSelectedSector(sectorsKeys[currentSectorIndex]);
+  }, [currentSectorIndex, setSelectedSector]);
 
   const isValidSector = selectedSector && sectorsData[selectedSector];
 

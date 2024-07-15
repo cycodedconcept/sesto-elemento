@@ -13,7 +13,7 @@ const partners = [futureFibre, sel, axis, alvarado, idteck, cortem, lever, ava];
 
 const OurPartners = () => {
   return (
-    <div className="font-lexend overflow-x-hidden">
+    <div className="font-lexend overflow-x-hidden pt-4 lg:pt-8">
       <section className="h-screen flex flex-col gap-[30px] items-center justify-center">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-4xl sm:text-5xl font-semibold text-dkBlue">
@@ -30,7 +30,7 @@ const OurPartners = () => {
                 <img
                   src={client}
                   alt={`Client ${index + 1}`}
-                  className="h-20 md:h-24 lg:h-32 xl:h-full"
+                  className="logos"
                 />
               </div>
             ))}
@@ -41,7 +41,7 @@ const OurPartners = () => {
                 <img
                   src={client}
                   alt={`Client ${index + 1}`}
-                  className="h-20 md:h-24 lg:h-32 xl:h-full"
+                  className="logos"
                 />
               </div>
             ))}

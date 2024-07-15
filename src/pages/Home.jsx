@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import HomeSection from "../components/HomeSection";
-import industryImage from "../assets/industry.png";
-import workerImage from "../assets/worker.png";
-import shipsImage from "../assets/ships.png";
+import industryImage from "../assets/industry.jpg";
+import workerImage from "../assets/worker.avif";
+import shipsImage from "../assets/ship.jpg";
 import ClientsSection from "../components/ClientsSection";
 import ContactUs from "./ContactUs";
 import WhyusSection from "../components/WhyusSection";

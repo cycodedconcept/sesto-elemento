@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavigationContext } from "../context/NavigationContext";
 import ServicesHomePage from "../components/ServicesHomePage";
@@ -76,10 +76,13 @@ const servicesData = {
   },
 };
 
+const servicesKeys = Object.keys(servicesData);
+
 const Services = () => {
   const { selectedService, setSelectedService } = useContext(NavigationContext);
   const location = useLocation();
   const sectionRef = useRef(null);
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
 
   useEffect(() => {
     const hash = location.hash.replace("#", "");
@@ -89,9 +92,22 @@ const Services = () => {
         sectionRef.current.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      setSelectedService("procurement");
+      setSelectedService(servicesKeys[currentServiceIndex]);
     }
-  }, [location, setSelectedService]);
+  }, [location, setSelectedService, currentServiceIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentServiceIndex(
+        (prevIndex) => (prevIndex + 1) % servicesKeys.length
+      );
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    setSelectedService(servicesKeys[currentServiceIndex]);
+  }, [currentServiceIndex, setSelectedService]);
 
   const isValidService = selectedService && servicesData[selectedService];
 

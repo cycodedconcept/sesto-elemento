@@ -18,9 +18,7 @@ const SectorHomePage = () => {
           to cater to the unique needs and requirements of each sector
         </p>
         <Link to="/contact-us">
-          <button className="bg-dkBlue text-white px-10 py-4 lg:px-36 lg:py-4 text-xs lg:text-sm rounded-lg">
-            Work with us
-          </button>
+          <button className="kbutton">Work with us</button>
         </Link>
       </div>
     </section>

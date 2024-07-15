@@ -4,20 +4,17 @@ import { Link } from "react-router-dom";
 const HomeSection = ({ bgImage, header, paragraph }) => {
   return (
     <div
-      className="relative w-full h-screen"
+      className="relative w-full h-screen bg-cover bg-center font-lexend"
       style={{
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "#EDEDED",
       }}
     >
-      <div className="absolute inset-0"></div>
+      <div className="bg-gradient-to-r from-homegrad2 from-40% to-homegrad1 to-3% absolute inset-0"></div>
       <div
         className="relative z-10 flex flex-col items-center lg:items-start  justify-center h-full lg:w-[50%] px-4 md:px-8 lg:px-16"
         data-aos="fade-right"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center lg:text-left font-semibold text-white mb-6 capitalize">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center lg:text-left font-semibold text-white mb-6 capitalize drop-shadow-lg">
           {header.split(" ").map((word, index) => (
             <span
               key={index}
@@ -31,9 +28,7 @@ const HomeSection = ({ bgImage, header, paragraph }) => {
           {paragraph}
         </p>
         <Link to="/contact-us">
-          <button className="bg-dkBlue text-white px-10 py-4 lg:px-36 lg:py-4 text-xs lg:text-sm rounded-lg">
-            Work with us
-          </button>
+          <button className="kbutton">Work with us</button>
         </Link>
       </div>
     </div>

@@ -21,9 +21,7 @@ const WhyusSection = () => {
           to="/contact-us"
           className="flex items-center lg:items-start lg:justify-start justify-center"
         >
-          <button className="bg-dkBlue text-white px-10 py-4 lg:px-36 lg:py-4 text-xs lg:text-sm rounded-lg">
-            Work with us
-          </button>
+          <button className="kbutton">Work with us</button>
         </Link>
       </div>
     </section>
